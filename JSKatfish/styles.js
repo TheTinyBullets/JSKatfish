@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-/*=================================||
+  /*=================================||
 ||  This section for index.ios.js  ||
 ||=================================*/
 
@@ -11,11 +11,11 @@ module.exports = {
    flexDirection: 'row',
    justifyContent: 'flex-start',
    alignItems: 'center',
-   backgroundColor: '#f3f3ec',
+   backgroundColor: '#F5FCFF',
  },
  rightContainer: {
    flex: 1,
-   backgroundColor: '#83aed2'
+   backgroundColor: "#3399FF"
  },
  title: {
    fontSize: 20,
@@ -31,7 +31,7 @@ module.exports = {
  },
  listView: {
    paddingTop: 20,
-   backgroundColor: '#c81c4e',
+   backgroundColor: '#F5FCFF',
  },
  buttonText: {
    fontSize: 18,
@@ -41,7 +41,7 @@ module.exports = {
  button: {
    height: 44,
    flexDirection: 'row',
-   backgroundColor: '#083070',
+   backgroundColor: '#48BBEC',
    justifyContent: 'center',
    transform: [{'translate' : [0, 0, 99]}]
  },
@@ -66,8 +66,8 @@ featNavContainer: {
 },
 featNavButtonText: {
  fontSize: 18,
- color: '#083070',
- alignSelf: 'center'
+ color: '#3366ff',
+ alignSelf: 'center',
 },
 featNavButton: {
  height: 44,
@@ -80,6 +80,40 @@ moreNavContainer: {
   flex: 0.15,
   alignItems: "center",
   justifyContent: "center"
+},
+
+/*=================================||
+||    This section for search      ||
+||=================================*/
+
+searchContainer: {
+  flex: 1
+},
+
+/*=================================||
+||    This section for searchNav   ||
+||=================================*/
+searchNavContainer: {
+  height: window.height/8.335,
+  borderRadius: (window.height/8.3350)/2,
+  marginRight: 2,
+  width: window.height/8.335,
+},
+searchNavOverlay: {
+    marginTop: 50,
+    height: 90,
+    width: 180,
+    alignItems:'center'
+  },
+searchNavChoiceText: {
+  alignItems: 'center',
+  alignSelf: 'center',
+  color: '#FF4D94',
+  marginTop: 40,
+  fontWeight: '600',
+  fontSize: 17,
+  flex: 1,
+  textAlign: 'center'
 },
 
 /*=================================||
@@ -114,8 +148,7 @@ backgroundView: {
   backgroundColor: 'rgba(0,0,0,0)',
 },
 featContainer: {
-  flex: 1,
-  color: '#83aed2'
+  flex: 1
 },
 scrollView: {
   marginTop: -16,

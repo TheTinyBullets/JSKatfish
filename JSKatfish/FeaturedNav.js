@@ -48,12 +48,14 @@ class Featured extends Component {
   }
 
   render() {
+    window.FeaturedNav = this;
+    person.shuffle(qualities);
     this.getTraits();
     return (
       <View style={styles.featNavContainer}>
         <Image source={{uri: 'http://chrissalam.com/bash/sailing.png'}} style={{backgroundColor: 'transparent', height: '600'}}>
           <Image source={{uri: 'http://graph.facebook.com/' + person.id + '/picture?type=large'}}
-                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85}} />
+                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#FFB6C1'}} />
             <ScrollView
               onScroll={() => { console.log('onScroll!'); }}
               scrollEventThrottle={200}
@@ -67,7 +69,6 @@ class Featured extends Component {
     );
   }
   getTraits(){
-    person.shuffle(qualities);
     personRef = ref.child("pond").child(person.id);
     for (var i = 0; i < qualities.length; i++) {
       var vote = {};

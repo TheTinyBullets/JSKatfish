@@ -71,7 +71,7 @@ renderTraits(list){
     <View style={styles.moreNavContainer}>
       <Image source={{uri: 'http://chrissalam.com/bash/palm-trees.jpg'}} style={{backgroundColor: 'transparent', height: '600'}}>
         <Image source={{uri: 'http://graph.facebook.com/' + window.Katfish.userID + '/picture?type=large'}}
-          style={{marginTop: 80, width: 200, height: 200, borderRadius: 100, marginBottom: 90}} />
+          style={{marginTop: 80, width: 200, height: 200, borderRadius: 100, marginBottom: 90, borderWidth:5, borderColor:'#83aed2'}} />
             <View>
               <Text numberOfLines={list.length} style={styles.title}>My friends say I am {list.slice(0,list.length-1).join(", ")} and {list.slice(list.length-1)}</Text>
             </View>

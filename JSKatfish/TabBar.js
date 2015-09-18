@@ -16,7 +16,7 @@ module.exports = function (){
       translucent={'true'}>
       <TabBarIOS.Item
         selected={window.Katfish.state.selectedTab === 'featured'}
-        icon={require('image!friends')}
+        icon={require('image!vote')}
         onPress={() => {
         window.Katfish.setState({
         selectedTab: 'featured'
@@ -26,7 +26,7 @@ module.exports = function (){
     </TabBarIOS.Item>
     <TabBarIOS.Item
       selected={window.Katfish.state.selectedTab === 'search'}
-      icon={require('image!graph')}
+      icon={require('image!friends')}
       onPress={() => {
       window.Katfish.setState({
        selectedTab: 'search'
