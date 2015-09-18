@@ -46,12 +46,28 @@ var MoreNav = React.createClass ({
 
   render() {
     window.MoreNav = this;
+    var that = this;
     if (this.state) {
-     return this.renderTraits(this.state.traits);
-   } else {
-    this.fireCall();
-    return this.renderLoadingView();
-  }
+       return this.renderTraits(this.state.traits);
+     } else {
+        ref.on("value", function(snapshot) {
+          that.fireCall(snapshot.val().pond[window.Katfish.userID]);
+        });
+      return this.renderLoadingView();
+    }
+  // window.MoreNav = this;
+  // var that = this;
+
+  //   if (!this.state) {
+  //         ref.on("value", function(snapshot) {
+  //           that.setState({
+  //             traits: snapshot.val().pond[window.Katfish.userID],
+  //             loaded: true});
+  //       });
+  //       this.fireCall(this.state.traits);
+  //     return this.renderLoadingView();
+  //   }
+  //     return this.renderTraits(this.state.traits);
 },
 
 clickHandler() {
@@ -70,7 +86,7 @@ renderLoadingView() {
 renderTraits(list){
   return (
     <View style={styles.moreNavContainer}>
-      <Image source={{uri: 'http://chrissalam.com/bash/palm-trees.jpg'}} style={{backgroundColor: 'transparent', height: '600'}}>
+      <Image source={{uri: 'http://chrissalam.com/bash/palm-trees.jpg'}} style={{backgroundColor: 'transparent', height: '600', width: '360'}}>
         <Image source={{uri: 'http://graph.facebook.com/' + window.Katfish.userID + '/picture?type=large'}}
           style={{marginTop: 80, width: 200, height: 200, borderRadius: 100, marginBottom: 90, borderWidth:5, borderColor:'#83aed2'}} />
             <View>
@@ -81,13 +97,9 @@ renderTraits(list){
     );
 },
 
-fireCall(){
+fireCall(temp){
   var that = this;
   var result = [[0,0]];
-
-    ref.on("value", function(snapshot) {
-
-      var temp = snapshot.val().pond[window.Katfish.userID];
 
       for(var key in temp){
         if(key !== 'name' && key !== 'id'){
@@ -109,12 +121,10 @@ fireCall(){
         result[i] = result[i][1]
       }
       that.setState({ traits : result })
-    }, function (errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
-
-  }
+    }
 
 });
 
 module.exports = MoreNav;
+
+//

@@ -40,7 +40,7 @@ var indents = [],
 ||   This calls down specific images and makes the list   ||
 ||========================================================*/
 
-class Featured extends Component {
+class FeaturedNav extends Component {
 
   getInitialState() {
     return {
@@ -58,7 +58,7 @@ class Featured extends Component {
           <TouchableHighlight underlayColor='transparent'
             onPress={()=>{ console.log("PRESSED IMAGE")
               this.props.navigator.push({
-                title: 'title',
+                title: 'Stats for '+ person.name,
                 component: tallyNav,
                 leftButtonTitle: 'Back',
                 onLeftButtonPress: () => this.props.navigator.pop(),
@@ -98,4 +98,4 @@ class Featured extends Component {
   }
 }
 
-module.exports = Featured;
+module.exports = FeaturedNav;
