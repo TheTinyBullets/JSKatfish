@@ -115,6 +115,7 @@ var {
 
 var SearchNav = React.createClass ({
   render() {
+    window.SearchNav = this;
     if(!this.state){
       this.formatFriends();
       return this.renderLoadingView()
@@ -143,7 +144,6 @@ var SearchNav = React.createClass ({
   clickHandler(friend){
     person.id = friend.id;
     person.name = friend.name;
-    console.log('person.name')
     // window.Featured.setState({reloaded: true});
     window.FeaturedNav.setState({reloaded: true});
     window.Katfish.setState({

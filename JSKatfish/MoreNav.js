@@ -45,6 +45,7 @@ var {
 var MoreNav = React.createClass ({
 
   render() {
+    window.MoreNav = this;
     if (this.state) {
      return this.renderTraits(this.state.traits);
    } else {
