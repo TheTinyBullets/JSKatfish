@@ -1,11 +1,15 @@
-var React = require('react-native');
-var Featured = require('./Featured');
-var Search = require('./Search');
-var More = require('./More')
+/*========================================================||
+||   Tab bar is the bottom screen and buttons             ||
+||========================================================*/
+
+var React = require('react-native'),
+  Featured = require('./Featured'),
+  Search = require('./Search'),
+  More = require('./More');
 
 var {
   TabBarIOS,
-}=React
+} = React
 
 module.exports = function (){
   return(
