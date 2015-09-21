@@ -44,7 +44,7 @@ var SearchNav = React.createClass ({
     }
     return (
       <View style={styles.featNavContainer}>
-      <Image source={{uri: 'http://chrissalam.com/bash/fishing2.png'}} style={{backgroundColor: 'transparent', height: '600', width: '374'}}>
+      <Image source={{uri: 'http://chrissalam.com/bash/beach-2.jpg'}} style={{backgroundColor: 'transparent', height: '600', width: '374'}}>
       <ScrollView>
       {this.state.names}
       </ScrollView>

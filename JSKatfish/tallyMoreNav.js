@@ -13,7 +13,8 @@ var {
   View,
   Text,
   TouchableHighlight,
-  ListView
+  ListView,
+  Image
 } = React;
 
 var TallyMoreNav = React.createClass ({
@@ -35,7 +36,6 @@ var TallyMoreNav = React.createClass ({
     var that = this;
     if (!this.state.loaded) {
       ref.on("value", function(snapshot) {
-        console.log(window.Katfish);
         that.setState({
           traits: snapshot.val().pond[window.Katfish.userID],
           loaded: true});
@@ -43,7 +43,6 @@ var TallyMoreNav = React.createClass ({
       return this.renderLoadingView();
     }
     var traits = this.state.traits;
-    console.log("traits",traits,window.Katfish.userID);
     return this.renderTraits(traits);
   },
 
@@ -75,17 +74,18 @@ var TallyMoreNav = React.createClass ({
    }
 
      return (
-       <View style={styles.container}>
-         <View style={styles.rightContainer}>
-           <Text numberOfLines={lines} style={styles.title}>{traits}</Text>
-         </View>
-         <View style={styles.rightContainer}>
-           <Text numberOfLines={lines} style={styles.title}>{countVotes}</Text>
-         </View>
-       </View>
+      <View style={styles.container}>
+        <View style={styles.rightContainer}>
+          <Text numberOfLines={lines} style={styles.title}>{traits}</Text>
+        </View>
+        <View style={styles.rightContainer}>
+          <Text numberOfLines={lines} style={styles.title}>{countVotes}</Text>
+        </View>
+      </View>
      )
    }
 
  });
 
  module.exports = TallyMoreNav;
+ //        <Image source={{uri: 'http://chrissalam.com/bash/beach-2.jpg'}} style={{backgroundColor: 'transparent', height: 600, flex: 1, resizeMode: 'cover',width: 400}}>

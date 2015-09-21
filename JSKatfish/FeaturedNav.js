@@ -54,9 +54,9 @@ class FeaturedNav extends Component {
     this.getTraits();
     return (
       <View style={styles.featNavContainer}>
-        <Image source={{uri: 'http://chrissalam.com/bash/sailing.png'}} style={{backgroundColor: 'transparent', height: '600'}}>
+        <Image source={{uri: 'http://chrissalam.com/bash/beach-4.jpg'}} style={{backgroundColor: 'transparent', height: '600'}}>
           <TouchableHighlight underlayColor='transparent'
-            onPress={()=>{ console.log("PRESSED IMAGE")
+            onPress={()=>{ console.log("See your friend's stats")
               this.props.navigator.push({
                 title: 'Stats for '+ person.name,
                 component: tallyNav,
@@ -65,7 +65,7 @@ class FeaturedNav extends Component {
             })
           }}>
             <Image source={{uri: 'http://graph.facebook.com/' + person.id + '/picture?type=large'}}
-                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#FFB6C1'}} />
+                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#FF7E47'}} />
           </TouchableHighlight>
             <ScrollView
               onScroll={() => { console.log('onScroll!'); }}

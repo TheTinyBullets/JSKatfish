@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  /*=================================||
+/*=================================||
 ||  This section for index.ios.js  ||
 ||=================================*/
 
@@ -15,12 +15,22 @@ module.exports = {
  },
  rightContainer: {
    flex: 1,
-   backgroundColor: "#3399FF"
+   backgroundColor: "transparent"
  },
  title: {
    fontSize: 20,
    marginBottom: 8,
-   textAlign: 'center',
+   textAlign: 'center'
+ },
+ titleR: {
+   fontSize: 20,
+   marginBottom: 0,
+   textAlign: 'right'
+ },
+ titleL: {
+   fontSize: 20,
+   marginBottom: 0,
+   textAlign: 'left'
  },
  year: {
    textAlign: 'center',
@@ -66,7 +76,7 @@ featNavContainer: {
 },
 featNavButtonText: {
  fontSize: 18,
- color: '#3366ff',
+ color: '#fff',
  alignSelf: 'center',
 },
 featNavButton: {
@@ -108,7 +118,9 @@ searchNavOverlay: {
 searchNavChoiceText: {
   alignItems: 'center',
   alignSelf: 'center',
-  color: '#FF4D94',
+  color: '#83aed2',
+  shadowOpacity: .9,
+  shadowColor: '#444',
   marginTop: 40,
   fontWeight: '600',
   fontSize: 17,
@@ -153,7 +165,8 @@ featContainer: {
 scrollView: {
   marginTop: -16,
   height: 200,
-  width: 400
+  width: 400,
+  shadowOpacity: 0.4
 },
 
 /*=================================||
