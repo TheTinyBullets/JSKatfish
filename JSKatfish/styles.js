@@ -32,6 +32,12 @@ module.exports = {
    marginBottom: 0,
    textAlign: 'left'
  },
+ titleLC: {
+   fontSize: 20,
+   marginBottom: 0,
+   textAlign: 'left',
+   marginRight:120
+ },
  year: {
    textAlign: 'center',
  },
@@ -90,6 +96,24 @@ moreNavContainer: {
   flex: 0.15,
   alignItems: "center",
   justifyContent: "center"
+},
+navOverlay: {
+    marginTop: 50,
+    height: 90,
+    width: 180,
+    alignItems:'center'
+  },
+navChoiceText: {
+  alignItems: 'center',
+  alignSelf: 'center',
+  color: '#fff',
+  shadowOpacity: .9,
+  shadowColor: '#444',
+  marginTop: 60,
+  fontWeight: '600',
+  fontSize: 17,
+  flex: 1,
+  textAlign: 'center'
 },
 
 /*=================================||
@@ -215,5 +239,17 @@ shareButton: {
 shareText: {
   fontSize: 18,
   color: 'white',
-}
+},
+tallyNavChoiceText: {
+  alignItems: 'center',
+  alignSelf: 'center',
+  color: '#444',
+  shadowOpacity: .9,
+  shadowColor: '#F2F8FD',
+  marginTop: 40,
+  fontWeight: '700',
+  fontSize: 17,
+  flex: 1,
+  textAlign: 'center'
+},
 };

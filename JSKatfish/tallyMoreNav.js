@@ -68,24 +68,25 @@ var TallyMoreNav = React.createClass ({
      if (key !== 'name' && key !== 'id' && count > 0) {
        var vote = "votes";
        if (count === 1) { vote = vote.replace(/s/,""); }
-       countVotes.push(count  + " " + vote + "                                ");
-       traits.push(key.replace(/\w/,function(s){return s.toUpperCase(); }) + "                      ");
+       countVotes.push(count  + " " + vote + "\n");
+       traits.push(key.replace(/\w/,function(s){return s.toUpperCase(); }) + "\t\t\t\n");
      }
    }
 
      return (
-      <View style={styles.container}>
-        <View style={styles.rightContainer}>
-          <Text numberOfLines={lines} style={styles.title}>{traits}</Text>
+      <Image source={{uri: 'http://chrissalam.com/bash/beach-3.jpg'}} style={{backgroundColor: 'transparent', height: 700, resizeMode: 'stretch',width: 400}}>
+        <View style={{flexDirection: 'row', alignItems: 'auto', marginTop: 200, marginLeft: 60}}>
+          <View style={{flexDirection:'column'}}>
+            <Text numberOfLines={lines} style={styles.tallyNavChoiceText}>{traits}</Text>
+          </View>
+          <View style={{flexDirection:'column'}}>
+            <Text numberOfLines={lines} style={styles.tallyNavChoiceText}>{countVotes}</Text>
+          </View>
         </View>
-        <View style={styles.rightContainer}>
-          <Text numberOfLines={lines} style={styles.title}>{countVotes}</Text>
-        </View>
-      </View>
+      </Image>
      )
    }
 
  });
 
  module.exports = TallyMoreNav;
- //        <Image source={{uri: 'http://chrissalam.com/bash/beach-2.jpg'}} style={{backgroundColor: 'transparent', height: 600, flex: 1, resizeMode: 'cover',width: 400}}>

@@ -65,7 +65,11 @@ class FeaturedNav extends Component {
             })
           }}>
             <Image source={{uri: 'http://graph.facebook.com/' + person.id + '/picture?type=large'}}
-                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#FF7E47'}} />
+                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#FF7E47'}}>
+              <View style={styles.navOverlay}>
+                <Text style={styles.navChoiceText}>see stats!</Text>
+              </View>
+            </Image>
           </TouchableHighlight>
             <ScrollView
               onScroll={() => { console.log('onScroll!'); }}

@@ -85,11 +85,15 @@ var MoreNav = React.createClass ({
             })
           }}>
             <Image source={{uri: 'http://graph.facebook.com/' + window.Katfish.userID + '/picture?type=large'}}
-                 style={{marginTop: 40, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#83aed2'}} />
+                 style={{marginTop: 60, marginLeft:20, width: 170, height: 170, borderRadius: 85, borderWidth:5, borderColor:'#83aed2'}}>
+              <View style={styles.navOverlay}>
+                <Text style={styles.navChoiceText}>see stats!</Text>
+              </View>
+            </Image>
           </TouchableHighlight>
               <View>
                 <Text style={{marginTop:200}}></Text>
-                <Text numberOfLines={list.length} style={styles.title}>My friends say I am {list.slice(0,list.length-1).join(", ")} and {list.slice(list.length-1)}</Text>
+                <Text numberOfLines={list.length} style={styles.titleLC}>My friends say I am {list.slice(0,list.length-1).join(", ")} and {list.slice(list.length-1)}</Text>
               </View>
         </Image>
       </View>

@@ -13,7 +13,8 @@ var {
   View,
   Text,
   TouchableHighlight,
-  ListView
+  ListView,
+  Image
 } = React;
 
 
@@ -62,26 +63,28 @@ var TallyNav = React.createClass ({
      vote,
      count;
 
-   for(var key in traitData){
-     count = -1;
-     for (var vote in traitData[key]) { count++; }
-     if (key !== 'name' && key !== 'id' && count > 0) {
-       var vote = "votes";
-       if (count === 1) { vote = vote.replace(/s/,""); }
-       countVotes.push(count  + " " + vote + "                                ");
-       traits.push(key.replace(/\w/,function(s){return s.toUpperCase(); }) + "                      ");
+     for(var key in traitData){
+       count = -1;
+       for (var vote in traitData[key]) { count++; }
+       if (key !== 'name' && key !== 'id' && count > 0) {
+         var vote = "votes";
+         if (count === 1) { vote = vote.replace(/s/,""); }
+           countVotes.push(count  + " " + vote + "\n");
+         traits.push(key.replace(/\w/,function(s){return s.toUpperCase(); }) + "\t\t\t\n");
+       }
      }
-   }
 
      return (
-       <View style={styles.container}>
-         <View style={styles.rightContainer}>
-           <Text numberOfLines={lines} style={styles.title}> {traits}</Text>
-         </View>
-         <View style={styles.rightContainer}>
-           <Text numberOfLines={lines} style={styles.title}> {countVotes}</Text>
-         </View>
-       </View>
+        <Image source={{uri: 'http://chrissalam.com/bash/beach-1.jpg'}} style={{backgroundColor: 'transparent', height: 700, resizeMode: 'stretch',width: 400}}>
+          <View style={{flexDirection: 'row', alignItems: 'auto', marginTop: 200, marginLeft: 60}}>
+            <View style={{flexDirection:'column'}}>
+              <Text numberOfLines={lines} style={styles.tallyNavChoiceText}> {traits}</Text>
+            </View>
+            <View style={{flexDirection:'column'}}>
+              <Text numberOfLines={lines} style={styles.tallyNavChoiceText}> {countVotes}</Text>
+            </View>
+          </View>
+        </Image>
      )
    }
 
