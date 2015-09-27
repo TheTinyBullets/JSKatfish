@@ -153,14 +153,6 @@ searchNavChoiceText: {
 },
 
 /*=================================||
-||    This section for search      ||
-||=================================*/
-
-searchContainer: {
-  flex: 1
-},
-
-/*=================================||
 ||    This section for more        ||
 ||=================================*/
 
@@ -248,7 +240,7 @@ tallyNavChoiceText: {
   shadowColor: '#F2F8FD',
   marginTop: 40,
   fontWeight: '700',
-  fontSize: 17,
+  fontSize: 19,
   flex: 1,
   textAlign: 'center'
 },
